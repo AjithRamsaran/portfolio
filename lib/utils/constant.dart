@@ -1106,7 +1106,6 @@ final projects = [
       "Kilofarms' E-commerce app, a local chain of grocery store in India.",
       technologies: ['Dart', 'Flutter', 'Android'],
       year: 2022,
-      isNetwork: true,
       image: 'assets/images/naalangadi.png'),
   Project(
       id: 5,

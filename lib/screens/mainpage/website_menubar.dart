@@ -147,7 +147,7 @@ class _WebsiteMenuBarState extends State<WebsiteMenuBar> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      AnimatedSwitcher(
+                      /*AnimatedSwitcher(
                           duration: Duration(milliseconds: 100),
                           child: GestureDetector(
                             onTap: () {
@@ -164,11 +164,11 @@ class _WebsiteMenuBarState extends State<WebsiteMenuBar> {
                                 color: isDarkMode ? Colors.white : Colors.black,
                               ),
                             ),
-                          )),
-                      Padding(
+                          )),*/
+                      /*Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(Icons.ac_unit),
-                      ),
+                      ),*/
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: RainbowButton(

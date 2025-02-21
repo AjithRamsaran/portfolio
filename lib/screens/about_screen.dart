@@ -29,7 +29,7 @@ class _AboutScreenState extends State<AboutScreen>
   double height = 0;
   double heightCard = 0;
 
-  int currentIndex = 0;
+  int currentIndex = 2;
   ScrollController _scrollController = ScrollController();
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final GlobalKey projectKey = GlobalKey();
@@ -194,7 +194,7 @@ class _AboutScreenState extends State<AboutScreen>
                         : MediaQuery.of(context).size.width
                         : MediaQuery.of(context).size.width),
                 padding: EdgeInsets.symmetric(
-                    horizontal: 16, vertical: 16),
+                    horizontal: 16, /*vertical: 16*/),
                 child: ScrollConfiguration(
                   behavior: ScrollConfiguration.of(context).copyWith(
                     scrollbars: false,
@@ -555,7 +555,7 @@ class _AboutScreenState extends State<AboutScreen>
                                                           ),
                                                           InteresedButton(
                                                             label:
-                                                            "Periyarist",
+                                                            "Traveller",
                                                             color: Colors
                                                                 .pink
                                                                 .shade100,

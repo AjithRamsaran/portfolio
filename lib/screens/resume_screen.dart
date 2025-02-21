@@ -375,7 +375,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
               flex: 1,
               child: Container(
                 margin: const EdgeInsets.only(right: 8.0),
-                child: Text('${education.completedYear}',
+                child: Text(' ${education.completedYear}',
                     style: GoogleFonts.openSans(
                         fontSize: 15,
                         color: Color(0xff94A3B8),
@@ -440,7 +440,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                     fontWeight: FontWeight.w600)),
                             if (!ResponsiveBreakpoints.of(context).isDesktop)
                               TextSpan(
-                                  text: '${education.completedYear}',
+                                  text: ' ${education.completedYear}',
                                   style: GoogleFonts.openSans(
                                       fontSize: 15,
                                       color: Color(0xff94A3B8),
@@ -534,7 +534,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
       radius: Radius.circular(20),
       child: Container(
         height: MediaQuery.of(context).size.height - 66,
-        padding: EdgeInsets.all(16.0),
+        margin: EdgeInsets.only(left: 16.0, right: 16.0),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -564,7 +564,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                   Condition.equals(name: DESKTOP)
                                 ],
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 24.0),
+                                  margin: const EdgeInsets.only(left: 24.0,top: 24),
                                   //height: MediaQuery.of(context).size.height - 66,
                                   child: Column(
                                       mainAxisAlignment:
@@ -591,6 +591,12 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                           ],
                                         ),
                                       ]),
+                                ),
+                              ),
+                              ResponsiveVisibility(
+                                hiddenConditions: [Condition.smallerThan(name: DESKTOP)],
+                                child: SizedBox(
+                                  height: 24,
                                 ),
                               ),
                               listItem(
@@ -652,7 +658,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
               child: Flexible(
                 flex: 2,
                 child: Container(
-                  margin: const EdgeInsets.only(left: 24.0),
+                  margin: const EdgeInsets.only(left: 24.0, top: 24),
                   //height: MediaQuery.of(context).size.height - 66,
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
