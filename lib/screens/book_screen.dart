@@ -83,7 +83,7 @@ class BookScreen extends StatelessWidget {
                       gridDelegate: ResponsiveGridDelegate(
                         crossAxisSpacing: 16,
                         mainAxisSpacing: 16,
-                        //maxCrossAxisExtent: 400,
+                        maxCrossAxisExtent: 400,
                         minCrossAxisExtent: 220,
                         childAspectRatio: 0.6,
                       ),

@@ -1,5 +1,5 @@
 name: portfolio_ajith
-description: "A new Flutter project."
+description: "Portfolio of Ajith Ramsaran"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -42,6 +42,7 @@ dependencies:
   responsive_framework: ^1.5.1
   carousel_slider: ^5.0.0
   flutter_svg: ^0.22.0
+  meta_seo: ^3.0.9
 dev_dependencies:
   flutter_test:
     sdk: flutter

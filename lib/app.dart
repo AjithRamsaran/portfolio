@@ -64,7 +64,6 @@ class _AppState extends State<App> {
                 const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
               ],
             ),
-        initialRoute: "/",
         home: AnimatedTheme(
             duration: const Duration(milliseconds: 500),
             curve: Curves.easeInOut,
