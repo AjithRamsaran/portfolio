@@ -583,13 +583,17 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                                 thickness: 2,
                                               ),
                                             ),
-                                            ProfileHeader(
-                                              direction: Axis.horizontal,
-                                              selectedIndex: _selectedIndex,
-                                              onSelectedIndexChanged:
-                                                  (int index) {
-                                                _scrollToItem(index);
-                                              },
+                                            Container(
+                                              margin: const EdgeInsets.only(
+                                                  top: 20),
+                                              child: ProfileHeader(
+                                                direction: Axis.horizontal,
+                                                selectedIndex: _selectedIndex,
+                                                onSelectedIndexChanged:
+                                                    (int index) {
+                                                  _scrollToItem(index);
+                                                },
+                                              ),
                                             ),
                                           ],
                                         ),
