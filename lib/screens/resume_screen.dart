@@ -1,11 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_ajith/utils/url_handler.dart';
 import 'package:portfolio_ajith/widgets/footer/footer_widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'dart:math' as math;
 
 import '../entities/entities.dart';
+import '../widgets/components/components.dart';
 
 class ResumeScreen extends StatefulWidget {
   @override
@@ -82,7 +84,6 @@ class _ResumeScreenState extends State<ResumeScreen> {
     ).then((value) => setState(() {
           ignoreScrolling = false;
         }));
-
   }
 
   Widget introWidget() {
@@ -509,7 +510,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
           initiallyExpanded: true,
           collapsedShape: _DottedBorderShape(horizontalPadding: 16),
           title: Container(
- //dotted border
+            //dotted border
             child: Text(
               title ?? '',
               style: GoogleFonts.notoSans(
@@ -564,11 +565,13 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                   Condition.equals(name: DESKTOP)
                                 ],
                                 child: Container(
-                                  margin: const EdgeInsets.only(left: 24.0,top: 24),
+                                  margin: const EdgeInsets.only(
+                                      left: 16.0, top: 24),
                                   //height: MediaQuery.of(context).size.height - 66,
                                   child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Column(
@@ -590,11 +593,24 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                             ),
                                           ],
                                         ),
+                                        RainbowButton(
+                                          label: 'Download PDF',
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 8, vertical: 4),
+                                          onPressed: () {
+                                            openUrl(
+                                                "https://drive.google.com/file/d/1pcnQdmae6_BGfopLdzM6GL6uDZZ5cPYI/view?usp=sharing");
+                                          },
+                                        ),
+                                        SizedBox(height: 16,)
+
                                       ]),
                                 ),
                               ),
                               ResponsiveVisibility(
-                                hiddenConditions: [Condition.smallerThan(name: DESKTOP)],
+                                hiddenConditions: [
+                                  Condition.smallerThan(name: DESKTOP)
+                                ],
                                 child: SizedBox(
                                   height: 24,
                                 ),
@@ -640,7 +656,9 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                   child: Container(
                                       margin: EdgeInsets.only(left: 16),
                                       child: interestWidget())),
-                              SizedBox(height: 20),
+                              SizedBox(
+                                height: 20,
+                              ),
                               ResponsiveVisibility(hiddenConditions: [
                                 Condition.equals(name: DESKTOP)
                               ], child: FooterWidget())
@@ -676,12 +694,28 @@ class _ResumeScreenState extends State<ResumeScreen> {
                               ),
                               Expanded(
                                   child: SingleChildScrollView(
-                                      child: ProfileHeader(
-                                selectedIndex: _selectedIndex,
-                                onSelectedIndexChanged: (int index) {
-                                  _scrollToItem(index);
-                                },
+                                      child: Padding(
+                                padding: const EdgeInsets.all(20.0),
+                                child: ProfileHeader(
+                                  selectedIndex: _selectedIndex,
+                                  onSelectedIndexChanged: (int index) {
+                                    _scrollToItem(index);
+                                  },
+                                ),
                               ))),
+                              Container(
+                                margin: const EdgeInsets.only(
+                                    top: 16.0, bottom: 16.0),
+                                child: RainbowButton(
+                                  label: 'Download PDF',
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 8, vertical: 4),
+                                  onPressed: () {
+                                    openUrl(
+                                        "https://drive.google.com/file/d/1pcnQdmae6_BGfopLdzM6GL6uDZZ5cPYI/view?usp=sharing");
+                                  },
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -734,61 +768,58 @@ class _ProfileHeaderState extends State<ProfileHeader> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Section list
-          widget.direction == Axis.horizontal
-              ? Wrap(
-                  alignment: WrapAlignment.start,
-                  crossAxisAlignment: WrapCrossAlignment.start,
-                  spacing: 16.0,
-                  // horizontal space between buttons
-                  runSpacing: 4.0,
-                  // vertical space between buttons
-                  children: buildList(),
-                )
-              : Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: buildList(),
-                ),
-          const SizedBox(height: 20),
-          // Filter view label
-          /*const Text(
-            'Filter view:',
-            style: TextStyle(fontSize: 16, color: Colors.grey),
-          ),
-          const SizedBox(height: 10),
-          // Filter buttons
-          Wrap(
-            spacing: 8.0, // horizontal space between buttons
-            runSpacing: 4.0, // vertical space between buttons
-            children: List.generate(
-              _filters.length,
-              (index) => HoverBorderButton3(
-                label: _filters[index],
-                selected: false,
-                padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                hoverTextColor: Color(0xFF334155),
-                selectedTextColor: Color(0xFF334155),
-                unselectedTextColor: Color(0xFF94A3B8),
-                selectedBackgroundColor: Color(0xFFE0F2FE),
-                hoverBackgroundColor: Color(0xFFE0F2FE),
-                unselectedBackgroundColor: Color(0xFFF1F5F9),
-                selectedAndHoverBorderColor: Colors.blue,
-                unselectedBorderColor: Color.fromRGBO(226, 232, 240, 1),
-                borderRadius: 4,
-                borderWidth: 1,
-                onPressed: () {},
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Section list
+        widget.direction == Axis.horizontal
+            ? Wrap(
+                alignment: WrapAlignment.start,
+                crossAxisAlignment: WrapCrossAlignment.start,
+                spacing: 16.0,
+                // horizontal space between buttons
+                runSpacing: 4.0,
+                // vertical space between buttons
+                children: buildList(),
+              )
+            : Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: buildList(),
               ),
+        const SizedBox(height: 20),
+        // Filter view label
+        /*const Text(
+          'Filter view:',
+          style: TextStyle(fontSize: 16, color: Colors.grey),
+        ),
+        const SizedBox(height: 10),
+        // Filter buttons
+        Wrap(
+          spacing: 8.0, // horizontal space between buttons
+          runSpacing: 4.0, // vertical space between buttons
+          children: List.generate(
+            _filters.length,
+            (index) => HoverBorderButton3(
+              label: _filters[index],
+              selected: false,
+              padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              hoverTextColor: Color(0xFF334155),
+              selectedTextColor: Color(0xFF334155),
+              unselectedTextColor: Color(0xFF94A3B8),
+              selectedBackgroundColor: Color(0xFFE0F2FE),
+              hoverBackgroundColor: Color(0xFFE0F2FE),
+              unselectedBackgroundColor: Color(0xFFF1F5F9),
+              selectedAndHoverBorderColor: Colors.blue,
+              unselectedBorderColor: Color.fromRGBO(226, 232, 240, 1),
+              borderRadius: 4,
+              borderWidth: 1,
+              onPressed: () {},
             ),
-          ),*/
-        ],
-      ),
+          ),
+        ),*/
+      ],
     );
   }
 
@@ -965,7 +996,6 @@ class GradientBlurLine extends StatelessWidget {
   }
 }
 
-
 class WorkItemWidget extends StatelessWidget {
   WorkItemWidget({
     super.key,
@@ -1000,10 +1030,6 @@ class WorkItemWidget extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 class _DottedBorderShape extends ShapeBorder {
   final double horizontalPadding;

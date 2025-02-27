@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,6 +40,7 @@ class _AboutScreenState extends State<AboutScreen>
   @override
   void initState() {
     super.initState();
+    log("Updated");
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setHeight();
     });
