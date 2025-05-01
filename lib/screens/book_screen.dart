@@ -23,7 +23,7 @@ class BookScreen extends StatelessWidget {
         child: SingleChildScrollView(
           controller: _scrollController,
           child: Container(
-            //width: double.infinity,
+            width: double.infinity,
             child: ConstrainedBox(
                       constraints: BoxConstraints(
               maxWidth: ResponsiveBreakpoints.of(context).isDesktop

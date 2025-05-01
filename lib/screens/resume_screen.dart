@@ -113,7 +113,10 @@ class _ResumeScreenState extends State<ResumeScreen> {
           location: 'Chennai',
           description: [
             'Building mobile applications (Android and iOS) for Methodical and associated apps, which is a modern workflow and automation platform for enterprises, offers a comprehensive all-in-one platform to meet diverse software needs.',
-            'Worked on web sockets and Rest API integration',
+            "Hosted and managed production-ready mobile applications on both the Apple App Store and Google Play Store, automating provisioning, signing, and deployment pipelines — reducing release cycle time by 40%.",
+            "Engineered robust state management architecture using Provider and Bloc, resulting in a 30% improvement in code maintainability and easier feature scalability.",
+            "Integrated RESTful APIs and real-time data handling (WebSocket) to enable seamless workflow automation and dynamic user interactions."
+                "Integrated CI/CD pipelines and Firebase services (Push Notifications, Crashlytics, Analytics) and improved crash-free user sessions to 99.8%"
           ]),
       Experience(
           fromYear: 'Aug 2020',
@@ -122,10 +125,10 @@ class _ResumeScreenState extends State<ResumeScreen> {
           company: 'Kilofarms',
           location: 'Chennai',
           description: [
-            'Designed and implemented all B2C and B2B applications from scratch to support the company operations starting from farming, transporting, trading, retail and e-commerce using Flutter and Native android.',
+            'Designed and implemented 6 B2C and B2B applications from scratch to support the company operations starting from farming, transporting, trading, retail and e-commerce using Flutter and Native android.',
             'Team management and handling of 5 junior developers. Responsible for their learning and development.',
             'Coordination with UI/UX, Product management and business teams to deliver optimal output.',
-            'Partnered with Ninjacart to integrate their APIs and implemented necessary features related to farming, input sales and entire loan application flow.',
+            'Worked closely with Ninjacart to embed their services into the platform, delivering end-to-end solutions for farming, input sales, and loan processing, which accelerated onboarding by 35%.',
             'Integrated various physical devices like Bluetooth printer, weighing scale and barcode reader with applications.',
             'Integrated Firebase services such as Push notification, Crashlytics and AWS services like Rekognition and S3.',
           ]),
@@ -571,7 +574,8 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                   child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Column(
@@ -603,11 +607,12 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                               horizontal: 8, vertical: 4),
                                           onPressed: () {
                                             openUrl(
-                                                "https://drive.google.com/file/d/1pcnQdmae6_BGfopLdzM6GL6uDZZ5cPYI/view?usp=sharing");
+                                                "https://drive.google.com/file/d/1H6ZNoVTz_oKrt0_t6BtoJHllU50g1UiD/view?usp=drive_link");
                                           },
                                         ),
-                                        SizedBox(height: 16,)
-
+                                        SizedBox(
+                                          height: 16,
+                                        )
                                       ]),
                                 ),
                               ),
