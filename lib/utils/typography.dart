@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'components.dart';
+import '../widgets/components/components.dart';
 
 const String fontFamily = "Google Sans";
 

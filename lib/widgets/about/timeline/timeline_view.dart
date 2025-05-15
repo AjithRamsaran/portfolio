@@ -77,11 +77,10 @@ class _TimeLineItemViewState extends State<TimeLineItemView> {
                       width: 5,
                       duration: Duration(milliseconds: 500),
                       decoration: BoxDecoration(
-                          color: /*_isHovered ? Colors.grey :*/
+                          color:
                           Colors.blue),
                     ),
                     SizedBox(height: 8),
-                    /*if (!_isHovered)*/
                     Icon(Icons.school_outlined),
                   ],
                 ),
@@ -104,17 +103,10 @@ class _TimeLineItemViewState extends State<TimeLineItemView> {
                           color: _isHovered ? Colors.grey : Colors.blue),
                     ),
                     SizedBox(height: 8),
-                    /*if (!_isHovered)*/
                     Icon(Icons.school_outlined),
                   ],
                 ),
               ),
-
-              /*if (_isHovered)
-                Text(widget.item.title,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-              if (_isHovered)
-                Text(widget.item.description, style: TextStyle(fontSize: 16)),*/
             ],
           ),
         ),

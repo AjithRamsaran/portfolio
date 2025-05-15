@@ -1,7 +1,7 @@
-export 'colors.dart';
+export '../../utils/colors.dart';
 export 'icons.dart';
-export 'spacing.dart';
-export 'typography.dart';
+export '../../utils/spacing.dart';
+export '../../utils/typography.dart';
 export 'hover_bordered_button.dart';
 export 'hover_bordered_button2.dart';
 export 'hover_bordered_button3.dart';

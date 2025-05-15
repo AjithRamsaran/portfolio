@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 class HoverBorderButton extends StatefulWidget {
   final String label;
   final VoidCallback onPressed;
-  bool _isHighlighted;
+  final bool _isHighlighted;
 
   HoverBorderButton({
     Key? key,
     required this.label,
     required this.onPressed,
-    required bool isHighlighted ,
-  })
-      : _isHighlighted = isHighlighted,
+    required bool isHighlighted,
+  })  : _isHighlighted = isHighlighted,
         super(key: key);
 
   @override
@@ -20,26 +19,20 @@ class HoverBorderButton extends StatefulWidget {
 }
 
 class _HoverBorderButtonState extends State<HoverBorderButton> {
-
   bool _isHovered = false;
-  bool _isHighlighted;
+  final bool _isHighlighted;
 
   _HoverBorderButtonState(this._isHighlighted);
-
-  //assign the value of _isHighlighted to the value of the widget's _isHighlighted
-
 
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
       onEnter: (_) {
-        if (_isHighlighted)
-          return;
+        if (_isHighlighted) return;
         setState(() => _isHovered = true);
       },
       onExit: (_) {
-        if (_isHighlighted)
-          return;
+        if (_isHighlighted) return;
         setState(() => _isHovered = false);
       },
       child: GestureDetector(

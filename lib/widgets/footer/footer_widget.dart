@@ -12,7 +12,6 @@ class FooterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints(maxWidth: 400),
-      //padding: const EdgeInsets.only(left: 42.0),
       child: Column(
         children: [
           Row(

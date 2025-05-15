@@ -5,25 +5,20 @@ import 'package:responsive_framework/responsive_framework.dart';
 import '../../components/components.dart';
 import 'code_snippet.dart';
 
-
-
 class CodeSnippetUI extends StatelessWidget {
-  Color _keywords = Colors.orange; //Color(0xFFCC7832);
-  Color _annotation = Color(0xFFBBB529);
-  final Color _type = Colors.white; //Color(0xFFA9B7C6);
-  Color _variableAndParams = Colors.pink.shade200; //Color(0xFF9876AA);
-  Color _function = Colors.blue; //Color(0xFFFFC66D);
-  Color _string = Colors.lightGreen; //Color(0xFF6A8759);
+  Color _keywords = Colors.orange;
+  final Color _type = Colors.white;
+  Color _variableAndParams = Colors.pink.shade200;
+  Color _function = Colors.blue;
+  Color _string = Colors.lightGreen;
   Color _number = Color(0xFF6897BB);
-  Color _enum = Color(0xFFCC7832);
   Color _operatorsAndSymbols = Color(0xFFFFFFFF);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      // Background color similar to the editor
       height: ResponsiveBreakpoints.of(context).isDesktop ||
-          ResponsiveBreakpoints.of(context).isTablet
+              ResponsiveBreakpoints.of(context).isTablet
           ? MediaQuery.of(context).size.height / 2
           : MediaQuery.of(context).size.height / 2,
       decoration: BoxDecoration(

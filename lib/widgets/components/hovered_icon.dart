@@ -2,17 +2,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HoveredIcon extends StatefulWidget {
-  HoveredIcon(
+  const HoveredIcon(
       {super.key,
       required this.icon,
       this.onPressed,
       this.hoverColor = Colors.blue,
       this.color = Colors.black});
 
-  IconData icon;
-  Function? onPressed;
-  Color hoverColor;
-  Color color;
+  final IconData icon;
+  final Function? onPressed;
+  final Color hoverColor;
+  final Color color;
 
   @override
   State<HoveredIcon> createState() => _HoveredIconState();

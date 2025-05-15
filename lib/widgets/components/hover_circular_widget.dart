@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class HoveredCircularWidget extends StatefulWidget {
-  HoveredCircularWidget({super.key, required this.color});
+  const HoveredCircularWidget({super.key, required this.color});
 
-  Color color;
+  final Color color;
 
   @override
   State<HoveredCircularWidget> createState() => _HoveredCircularWidgetState();
@@ -29,7 +29,8 @@ class _HoveredCircularWidgetState extends State<HoveredCircularWidget> {
         height: 16,
         width: 16,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8), color: _isHovered ? widget.color: Color(0xFF334155)),
+            borderRadius: BorderRadius.circular(8),
+            color: _isHovered ? widget.color : Color(0xFF334155)),
       ),
     );
   }
