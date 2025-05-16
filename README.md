@@ -1,16 +1,6 @@
 # Ajith Ramsaran
 
-A new Flutter project.
 
-## Getting Started
+Welcome to the repository for my personal portfolio website! This website serves as a central hub to showcase my skills, projects, and experience. It's built using [Flutter Web](https://flutter.dev/web), allowing for a unique and engaging web experience powered by the same framework I use for mobile development.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+You can view the live website here: https://ajithramsaran.github.io/
