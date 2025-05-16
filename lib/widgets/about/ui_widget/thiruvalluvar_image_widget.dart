@@ -9,22 +9,22 @@ class ThiruvalluvarImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: 30, right: 30, top: 30),
+      margin: const EdgeInsets.only(left: 30, right: 30, top: 30),
       child: Stack(
         children: [
           Transform.rotate(
             angle: -20 * math.pi / 180,
-            child: _ThiruvalluvarImageWidget(),
+            child: const _ThiruvalluvarImageWidget(),
           ),
           Transform.rotate(
             angle: -15 * math.pi / 180,
-            child: _ThiruvalluvarImageWidget(),
+            child: const _ThiruvalluvarImageWidget(),
           ),
           Transform.rotate(
             angle: -8 * math.pi / 180,
-            child: _ThiruvalluvarImageWidget(),
+            child: const _ThiruvalluvarImageWidget(),
           ),
-          _ThiruvalluvarImageWidget(),
+          const _ThiruvalluvarImageWidget(),
         ],
       ),
     );

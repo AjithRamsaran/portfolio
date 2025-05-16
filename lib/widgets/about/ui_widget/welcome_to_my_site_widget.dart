@@ -48,33 +48,37 @@ class _WelcomeToMySiteWidgetState extends State<WelcomeToMySiteWidget> {
                 ),
                 WidgetSpan(
                   alignment: PlaceholderAlignment.middle,
-                  child: GradientText(
-                    text: 'Ajith Ramsaran',
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(0xFF06B6D4),
-// Cyan
-                        Color(0xFF0EA5E9),
-// Blue
-                        Color(0xFF3B82F6),
-// Dark Blue
-                      ],
-                    ),
+                  child: Wrap(
+                    children: [
+                      GradientText(
+                        text: 'Ajith Ramsaran,',
+                        style: TextStyle(
+                          fontSize: 48,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        gradient: LinearGradient(
+                          colors: [
+                            Color(0xFF06B6D4),
+                            // Cyan
+                            Color(0xFF0EA5E9),
+                            // Blue
+                            Color(0xFF3B82F6),
+                            // Dark Blue
+                          ],
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                TextSpan(
+/*                TextSpan(
                   text: ',',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 48,
                   ),
-                ),
+                )*/
                 TextSpan(
-                  text: ' a Flutter developer.',
+                  text: '\nFlutter developer.',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 48,

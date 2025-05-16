@@ -8,10 +8,10 @@ class GradientText extends StatelessWidget {
 
   const GradientText(
       {Key? key,
-        required this.text,
-        required this.style,
-        required this.gradient,
-        this.softWrap = true})
+      required this.text,
+      required this.style,
+      required this.gradient,
+      this.softWrap = true})
       : super(key: key);
 
   @override

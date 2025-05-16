@@ -2,8 +2,6 @@ import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:meta_seo/meta_seo.dart';
 import 'package:portfolio_ajith/screens/resume_screen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

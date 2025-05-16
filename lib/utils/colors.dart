@@ -19,13 +19,13 @@ final lightTheme = ThemeData(
   brightness: Brightness.light,
   primarySwatch: Colors.blue,
   scaffoldBackgroundColor: Colors.white,
-  textTheme: TextTheme(bodyText2: TextStyle(color: Colors.black)),
+  textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.black)),
 );
 
 final darkTheme = ThemeData(
   brightness: Brightness.dark,
   primarySwatch: Colors.blue,
   scaffoldBackgroundColor: Colors.black,
-  textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white)),
+  textTheme: TextTheme(bodyMedium: TextStyle(color: Colors.white)),
 );
 
