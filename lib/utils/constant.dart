@@ -1083,7 +1083,7 @@ final projects = [
       company: 'Radius Agent',
       description:
       'Radius Agent is a real estate brokerage that helps real estate agents run their businesses. It provides a CRM, lead generation, and marketing tools.',
-      technologies: ['Android', 'MVP', 'Retrofit'],
+      technologies: ['Android', 'MVP', 'Java', 'Retrofit'],
       year: 2018,
       isNetwork: true,
       image:
@@ -1113,7 +1113,7 @@ final projects = [
       company: 'Kilofarms',
       description:
       'Retail Point Of Sale (POS) system developed using Flutter for retail billing, designed specifically for tablets.',
-      technologies: ['Dart', 'Flutter', 'Android'],
+      technologies: ['Dart', 'Flutter', 'Kotlin'],
       year: 2022,
       image: 'assets/images/kilofarms.png'),
   Project(
@@ -1122,7 +1122,7 @@ final projects = [
       company: 'Kilofarms',
       description:
       "Kilofarms' internal app,used to manage and track the procurement of goods and warehouse operations.",
-      technologies: ['Dart', 'Flutter', 'Android'],
+      technologies: ['Java', 'Android'],
       year: 2020,
       image: 'assets/images/kilofarms.png'),
   Project(

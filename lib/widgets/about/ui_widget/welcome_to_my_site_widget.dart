@@ -78,7 +78,7 @@ class _WelcomeToMySiteWidgetState extends State<WelcomeToMySiteWidget> {
                   ),
                 )*/
                 TextSpan(
-                  text: '\nFlutter developer.',
+                  text: '\nMobile App Developer.',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 48,
@@ -90,7 +90,7 @@ class _WelcomeToMySiteWidgetState extends State<WelcomeToMySiteWidget> {
           Padding(
             padding: const EdgeInsets.only(top: 16),
             child: Text(
-              'I love building high-performance mobile apps with Flutter, creating smooth animations, seamless API integrations, and intuitive user experiences that make you go WOW!',
+              'I love building high-performance mobile apps with Flutter and Native Android, creating smooth animations, seamless API integrations, and intuitive user experiences that make you go WOW!',
               style: GoogleFonts.notoSans(
                 color: Color(0xFF64748B),
                 fontWeight: FontWeight.w400,
@@ -101,7 +101,7 @@ class _WelcomeToMySiteWidgetState extends State<WelcomeToMySiteWidget> {
           Padding(
             padding: const EdgeInsets.only(top: 16),
             child: Text(
-              "I'm always eager to learn and explore new technologies, frameworks, and tools. Currently, I'm diving into Flutter Web, adaptive UI design, and performance optimization.",
+              "I'm always eager to learn and explore new technologies, frameworks, and tools. Currently, I'm diving into Flutter Web and Rive, adaptive UI design, and performance optimization.",
               style: GoogleFonts.notoSans(
                 color: Color(0xFF64748B),
                 fontWeight: FontWeight.w400,

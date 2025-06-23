@@ -88,7 +88,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
 
   Widget introWidget() {
     return Text(
-        "With a Master’s degree in Software Systems and 5 Years of Experience in Flutter App Development with Full SDLC, also worked in Agile methodology. Developed 5+ Flutter and 4 Native applications from scratch for mobile and tablet devices that offer users an intuitive, friendly interface and successfully executed a lot of updates to existing applications. I have experience in team management. I am able to quickly grasp new technology and begin working on it.",
+        "With a Master’s degree in Software Systems and 5 Years of Experience in Flutter and Native Android App Development with Full SDLC, also worked in Agile methodology. Developed 5+ Flutter and 4 Native applications from scratch for mobile and tablet devices that offer users an intuitive, friendly interface and successfully executed a lot of updates to existing applications. I have experience in team management. I am able to quickly grasp new technology and begin working on it.",
         style: GoogleFonts.openSans(
             fontSize: 16,
             color: Color(0xff64748b),
@@ -108,7 +108,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
     List<Experience> experiences = [
       Experience(
           fromYear: 'Mar 2023',
-          title: 'Software Engineer (Flutter)',
+          title: 'Software Engineer',
           company: 'RedBlackTree',
           location: 'Chennai',
           description: [
@@ -121,7 +121,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
       Experience(
           fromYear: 'Aug 2020',
           toYear: 'Mar 2023',
-          title: 'Lead Mobile Developer (Flutter & Native Android)',
+          title: 'Founding Team Member - Lead Mobile Developer',
           company: 'Kilofarms',
           location: 'Chennai',
           description: [
@@ -200,7 +200,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
           capabilities: ['Tamil - native', 'English - bilingual']),
       Capability(
           title: 'Programming Languages',
-          capabilities: ['Dart', 'Python', 'Java']),
+          capabilities: ['Dart', 'Python', 'Java', 'Kotlin']),
       Capability(title: 'APIs', capabilities: [
         'Rest API',
         'Web Sockets',
