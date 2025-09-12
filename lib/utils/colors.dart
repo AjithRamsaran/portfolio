@@ -16,6 +16,7 @@ const Color backgroundDark = Color(0xFF303c42);
 const Color border = Color(0x20000000);
 bool isDarkMode = false;
 final lightTheme = ThemeData(
+  useMaterial3: true,
   brightness: Brightness.light,
   primarySwatch: Colors.blue,
   scaffoldBackgroundColor: Colors.white,
@@ -23,6 +24,7 @@ final lightTheme = ThemeData(
 );
 
 final darkTheme = ThemeData(
+  useMaterial3: true,
   brightness: Brightness.dark,
   primarySwatch: Colors.blue,
   scaffoldBackgroundColor: Colors.black,

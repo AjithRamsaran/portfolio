@@ -30,10 +30,10 @@ class _AppState extends State<App> {
 
     return MaterialApp(
         title: 'Ajith Ramsaran',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        theme: isDarkMode ? darkTheme : lightTheme/*ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue*//*Colors.deepPurple*//*),
           useMaterial3: true,
-        ),
+        )*/,
         builder: (context, child) => ResponsiveBreakpoints.builder(
               child: child!,
               breakpoints: [

@@ -506,12 +506,18 @@ class _ResumeScreenState extends State<ResumeScreen> {
       key: key,
       color: Colors.transparent,
       child: Theme(
-        data: ThemeData(hintColor: Colors.black),
+        data: ThemeData(
+          hintColor: Colors.black,
+          expansionTileTheme: ExpansionTileThemeData(
+            iconColor: Colors.blue,
+            collapsedIconColor: Colors.blue,
+          ),
+        ),
         child: ExpansionTile(
           //dotted border at the bottom
-          shape: _DottedBorderShape(horizontalPadding: 16),
+          shape: const _DottedBorderShape(horizontalPadding: 16),
           initiallyExpanded: true,
-          collapsedShape: _DottedBorderShape(horizontalPadding: 16),
+          collapsedShape: const _DottedBorderShape(horizontalPadding: 16),
           title: Container(
             //dotted border
             child: Text(
@@ -616,7 +622,7 @@ class _ResumeScreenState extends State<ResumeScreen> {
                                       ]),
                                 ),
                               ),
-                              ResponsiveVisibility(
+                              const ResponsiveVisibility(
                                 hiddenConditions: [
                                   Condition.smallerThan(name: DESKTOP)
                                 ],
@@ -1042,6 +1048,151 @@ class WorkItemWidget extends StatelessWidget {
 
 class _DottedBorderShape extends ShapeBorder {
   final double horizontalPadding;
+  final double dashWidth;
+  final double dashSpace;
+  final double strokeWidth;
+  final Color color;
+
+  const _DottedBorderShape({
+    this.horizontalPadding = 0.0,
+    this.dashWidth = 5.0,
+    this.dashSpace = 3.0,
+    this.strokeWidth = 1.0,
+    this.color = Colors.grey,
+  });
+
+  @override
+  EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
+
+  @override
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
+    final paddedRect = Rect.fromLTRB(
+      rect.left + horizontalPadding,
+      rect.top,
+      rect.right - horizontalPadding,
+      rect.bottom - strokeWidth, // keep inside
+    );
+    return Path()..addRect(paddedRect);
+  }
+
+  @override
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
+    final paddedRect = Rect.fromLTRB(
+      rect.left + horizontalPadding,
+      rect.top,
+      rect.right - horizontalPadding,
+      rect.bottom,
+    );
+    return Path()..addRect(paddedRect);
+  }
+
+  @override
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = strokeWidth
+      ..style = PaintingStyle.stroke;
+
+    final paddedRect = Rect.fromLTRB(
+      rect.left + horizontalPadding,
+      rect.top,
+      rect.right - horizontalPadding,
+      rect.bottom,
+    );
+
+    // dashed bottom border
+    final path = Path();
+    double startX = paddedRect.left;
+    final y = paddedRect.bottom;
+
+    while (startX < paddedRect.right) {
+      path.moveTo(startX, y);
+      path.lineTo(
+        math.min(startX + dashWidth, paddedRect.right),
+        y,
+      );
+      startX += dashWidth + dashSpace;
+    }
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  ShapeBorder scale(double t) => this;
+}
+
+/*
+class _DottedBorderShape extends ShapeBorder {
+  final double horizontalPadding;
+
+  const _DottedBorderShape({this.horizontalPadding = 0.0});
+
+  @override
+  EdgeInsetsGeometry get dimensions => EdgeInsets.zero;
+
+  @override
+  Path getInnerPath(Rect rect, {TextDirection? textDirection}) {
+    // Return a complete rectangular path for the inner boundary
+    final paddedRect = Rect.fromLTRB(
+      rect.left + horizontalPadding,
+      rect.top,
+      rect.right - horizontalPadding,
+      rect.bottom - 1, // Slightly smaller to account for border
+    );
+    return Path()..addRect(paddedRect);
+  }
+
+  @override
+  Path getOuterPath(Rect rect, {TextDirection? textDirection}) {
+    // Return the complete rectangular boundary - this is crucial for Flutter 3.35+
+    final paddedRect = Rect.fromLTRB(
+      rect.left + horizontalPadding,
+      rect.top,
+      rect.right - horizontalPadding,
+      rect.bottom,
+    );
+    return Path()..addRect(paddedRect);
+  }
+
+  @override
+  void paint(Canvas canvas, Rect rect, {TextDirection? textDirection}) {
+    const double dashWidth = 5.0;
+    const double dashSpace = 3.0;
+
+    final paint = Paint()
+      ..color = Colors.grey
+      ..strokeWidth = 1.0
+      ..style = PaintingStyle.stroke;
+
+    // Create dotted line at the bottom
+    final paddedRect = Rect.fromLTRB(
+      rect.left + horizontalPadding,
+      rect.top,
+      rect.right - horizontalPadding,
+      rect.bottom,
+    );
+
+    double startX = paddedRect.left;
+    final y = paddedRect.bottom;
+
+    while (startX < paddedRect.right) {
+      canvas.drawLine(
+        Offset(startX, y),
+        Offset(math.min(startX + dashWidth, paddedRect.right), y),
+        paint,
+      );
+      startX += dashWidth + dashSpace;
+    }
+  }
+
+  @override
+  ShapeBorder scale(double t) => this;
+}
+*/
+
+/*
+class _DottedBorderShape extends ShapeBorder {
+  final double horizontalPadding;
 
   const _DottedBorderShape({this.horizontalPadding = 0.0});
 
@@ -1075,6 +1226,14 @@ class _DottedBorderShape extends ShapeBorder {
     }
 
     return path;
+
+    // final paddedRect = Rect.fromLTRB(
+    //   rect.left + horizontalPadding,
+    //   rect.top,
+    //   rect.right - horizontalPadding,
+    //   rect.bottom,
+    // );
+    // return Path()..addRect(paddedRect);
   }
 
   @override
@@ -1090,3 +1249,4 @@ class _DottedBorderShape extends ShapeBorder {
   @override
   ShapeBorder scale(double t) => this;
 }
+*/

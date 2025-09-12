@@ -41,7 +41,7 @@ dependencies:
   universal_io: ^2.2.2
   responsive_framework: ^1.5.1
   carousel_slider: ^5.0.0
-  flutter_svg: ^0.22.0
+  flutter_svg: ^2.2.1 #^0.22.0
   meta_seo: ^3.0.9
 dev_dependencies:
   flutter_test:

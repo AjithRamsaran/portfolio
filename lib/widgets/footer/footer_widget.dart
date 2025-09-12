@@ -130,7 +130,7 @@ class _SocialMediaItemState extends State<SocialMediaItem> {
             });
           },
           child: SvgPicture.asset(
-            widget.assetPath!,
+            widget.assetPath ?? "",
             width: 30,
             height: 30,
             color:
